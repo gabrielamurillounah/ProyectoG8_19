@@ -1,6 +1,8 @@
 <?php
     class Conectar{
         protected $dbh;
+        
+        //Conexion de la base
 
         protected function Conexion(){
           try {
