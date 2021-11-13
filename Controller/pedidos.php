@@ -21,7 +21,7 @@
 
             case"InsertPedido":
                 $datos=$pedidos->insert_pedido($body["ID"],$body["ID_SOCIO"],$body["FECHA_PEDIDO"],
-                $body["DETALLE"],$body["SUB_TOTAL"],$body["TOTAL_ISV"],$body["TOTAL"],$body["FECHA_ENTREGA"]);
+                $body["DETALLE"],$body["SUB_TOTAL"],$body["TOTAL_ISV"],$body["TOTAL"],$body["FECHA_ENTREGA"],$body["ESTADO"]);
                 echo json_encode("Pedidos Agregados");
             break;
 
