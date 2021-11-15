@@ -21,12 +21,12 @@
         }
 
             public function insert_pedido($ID,$ID_SOCIO,$FECHA_PEDIDO,
-            $DETALLE,$SUB_TOTAL,$TOTAL_ISV,$TOTAL,$FECHA_ENTREGA){
+            $DETALLE,$SUB_TOTAL,$TOTAL_ISV,$TOTAL,$FECHA_ENTREGA,$ESTADO){
             $conectar = parent::Conexion();
             parent::set_names();
             $sql="INSERT INTO ma_pedidos(ID,ID_SOCIO,FECHA_PEDIDO,
             DETALLE,SUB_TOTAL,TOTAL_ISV,TOTAL,FECHA_ENTREGA,ESTADO) 
-            VALUES(?,?,?,?,?,?,?,?,'1');";
+            VALUES(?,?,?,?,?,?,?,?,?);";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1,$ID);
             $sql->bindValue(2,$ID_SOCIO);
@@ -36,6 +36,7 @@
             $sql->bindValue(6,$TOTAL_ISV);
             $sql->bindValue(7,$TOTAL);
             $sql->bindValue(8,$FECHA_ENTREGA);
+            $sql->bindValue(9,$ESTADO);
             $sql->execute();
             return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
         
